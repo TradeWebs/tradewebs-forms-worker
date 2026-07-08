@@ -58,7 +58,7 @@ async function sendNotification(env, client, fields) {
     body: JSON.stringify({
       from: env.RESEND_FROM,
       to: client.to,
-      reply_to: fields.email || undefined,
+      reply_to: fields.email ? [fields.email] : undefined,
       subject: `New enquiry — ${client.siteName}`,
       html: `<table>${rows}</table>`,
     }),

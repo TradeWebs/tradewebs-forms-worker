@@ -6,7 +6,5 @@ compatibility_date = "2026-01-01"
 #   RESEND_API_KEY
 
 [vars]
-# Using Resend's shared sandbox sender until tradewebs.co.uk is verified as a
-# sending domain in Resend (Resend dashboard -> Domains -> Add -> DNS records
-# in Cloudflare). Once verified, switch this to forms@tradewebs.co.uk.
-RESEND_FROM = "TradeWebs Forms <onboarding@resend.dev>"
+# tradewebs.co.uk verified as a Resend sending domain 2026-07-08.
+RESEND_FROM = "TradeWebs Forms <forms@tradewebs.co.uk>"
