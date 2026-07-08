@@ -1,0 +1,12 @@
+name = "tradewebs-forms"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Secrets (set via `wrangler secret put`, never stored here):
+#   RESEND_API_KEY
+
+[vars]
+# Using Resend's shared sandbox sender until tradewebs.co.uk is verified as a
+# sending domain in Resend (Resend dashboard -> Domains -> Add -> DNS records
+# in Cloudflare). Once verified, switch this to forms@tradewebs.co.uk.
+RESEND_FROM = "TradeWebs Forms <onboarding@resend.dev>"
