@@ -44,10 +44,21 @@ function escapeHtml(str) {
 }
 
 async function sendNotification(env, client, fields) {
-  const rows = Object.entries(fields)
-    .filter(([key]) => key !== "bot-field" && key !== "client_id")
+  const entries = Object.entries(fields).filter(
+    ([key]) => key !== "bot-field" && key !== "client_id"
+  );
+
+  const rows = entries
     .map(([key, value]) => `<tr><td style="padding:4px 12px 4px 0;color:#64748b;font-size:13px;text-transform:capitalize;">${escapeHtml(key)}</td><td style="padding:4px 0;font-size:14px;">${escapeHtml(value)}</td></tr>`)
     .join("");
+
+  const text = entries
+    .map(([key, value]) => `${key}: ${value}`)
+    .join("\n");
+
+  const subjectParts = [fields.name || "New enquiry"];
+  if (fields.trade) subjectParts.push(fields.trade);
+  subjectParts.push(client.siteName);
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -59,8 +70,9 @@ async function sendNotification(env, client, fields) {
       from: env.RESEND_FROM,
       to: client.to,
       reply_to: fields.email ? [fields.email] : undefined,
-      subject: `New enquiry — ${client.siteName}`,
+      subject: subjectParts.join(" — "),
       html: `<table>${rows}</table>`,
+      text,
     }),
   });
 
