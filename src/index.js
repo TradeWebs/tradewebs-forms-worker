@@ -11,12 +11,12 @@ const allowedOrigins = [
 
 const CLIENTS = {
   tradewebs: {
-    to: "jamesbowlesmail@gmail.com",
+    to: "tradewebs.agency@gmail.com",
     siteName: "TradeWebs",
     allowedOrigins,
   },
   "tradewebs-onboarding": {
-    to: "jamesbowlesmail@gmail.com",
+    to: "tradewebs.agency@gmail.com",
     siteName: "TradeWebs — New Client Onboarding",
     allowedOrigins,
   },
