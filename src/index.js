@@ -20,6 +20,15 @@ const CLIENTS = {
     siteName: "TradeWebs — New Client Onboarding",
     allowedOrigins,
   },
+  southwestflatroofing: {
+    to: "info@somersetflatroofingsw.com",
+    siteName: "South West Flat Roofing",
+    allowedOrigins: [
+      "https://southwestflatroofing.uk",
+      "https://www.southwestflatroofing.uk",
+      "https://southwestflatroofing.pages.dev",
+    ],
+  },
 };
 
 function corsHeaders(origin) {
