@@ -21,7 +21,7 @@ const CLIENTS = {
     allowedOrigins,
   },
   southwestflatroofing: {
-    to: "info@somersetflatroofingsw.com",
+    to: "southwestflatroofing17@gmail.com",
     siteName: "South West Flat Roofing",
     allowedOrigins: [
       "https://southwestflatroofing.uk",
